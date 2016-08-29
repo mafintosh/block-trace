@@ -1,0 +1,28 @@
+{
+  "name": "block-trace",
+  "version": "0.0.0",
+  "description": "Figure out if your node process is blocked because the CPU is spinning and exit the program with a stack trace if that is the case",
+  "main": "index.js",
+  "bin": {
+    "block-trace": "./bin.js"
+  },
+  "dependencies": {
+    "which": "^1.2.10"
+  },
+  "devDependencies": {
+    "standard": "^8.0.0"
+  },
+  "scripts": {
+    "test": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mafintosh/block-trace.git"
+  },
+  "author": "Mathias Buus (@mafintosh)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mafintosh/block-trace/issues"
+  },
+  "homepage": "https://github.com/mafintosh/block-trace"
+}

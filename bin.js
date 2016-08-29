@@ -30,7 +30,7 @@ function run (args) {
   args.unshift('--debug', '-r', require.resolve('./trace.js'))
 
   var server = unref(net.createServer(onsocket))
-  var timeout = setTimeout(ontimeout, 1000)
+  var timeout = unref(setTimeout(ontimeout, 1000))
 
   server.listen(0, onlistening)
 
@@ -74,13 +74,14 @@ function ontimeout () {
 function cleanup () {
   if (child) child.kill()
   if (debug) debug.kill()
+
   if (!tracing) return
   tracing = false
 
   try {
     var stack = fs.readFileSync(process.env.BLOCK_TRACE_FILE, 'utf-8')
   } catch (err) {
-    onerror(err)
+    return
   }
 
   stack = 'Error: CPU is blocked\n' + stack.trim().split('\n').slice(3).join('\n')

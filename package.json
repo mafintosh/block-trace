@@ -1,6 +1,6 @@
 {
   "name": "block-trace",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Figure out if your node process is blocked because the CPU is spinning and exit the program with a stack trace if that is the case",
   "main": "index.js",
   "bin": {
